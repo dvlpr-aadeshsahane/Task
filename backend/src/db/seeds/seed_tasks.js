@@ -1,0 +1,130 @@
+/**
+ * @param { import("knex").Knex } knex
+ * @returns { Promise<void> }
+ */
+exports.seed = async function (knex) {
+  await knex("tasks").del();
+
+  await knex("tasks").insert([
+    {
+      title: "Complete project proposal",
+      description: "Draft and send the proposal to the client.",
+      due_date: "2026-10-15",
+      priority: "high",
+      assignedId: "aarav",
+      completed: false,
+    },
+    {
+      title: "Review design mockups",
+      description: "Provide feedback on new UI designs.",
+      due_date: "2026-10-12",
+      priority: "medium",
+      assignedId: "aarav",
+      completed: true,
+    },
+    {
+      title: "Team standup meeting",
+      description: "Daily sync with the development team.",
+      due_date: "2026-10-10",
+      priority: "low",
+      assignedId: "aarav",
+      completed: false,
+    },
+    {
+      title: "Update portfolio website",
+      description: "Add recent projects and update the about section.",
+      due_date: null,
+      priority: "medium",
+      assignedId: "aarav",
+      completed: false,
+    },
+    {
+      title: "Prepare client presentation",
+      description: "Create slides for the quarterly business review.",
+      due_date: "2026-10-18",
+      priority: "high",
+      assignedId: "priya",
+      completed: false,
+    },
+    {
+      title: "Fix login bug",
+      description: "Resolve Google OAuth login issue.",
+      due_date: "2026-10-11",
+      priority: "high",
+      assignedId: "priya",
+      completed: true,
+    },
+    {
+      title: "Write blog post",
+      description: "Draft an article on mobile apps for business.",
+      due_date: "2026-10-25",
+      priority: "low",
+      assignedId: "priya",
+      completed: false,
+    },
+    {
+      title: "Test payment gateway",
+      description: "Run end-to-end Stripe tests on staging.",
+      due_date: "2026-10-14",
+      priority: "medium",
+      assignedId: "priya",
+      completed: false,
+    },
+    {
+      title: "Update documentation",
+      description: "Add API endpoint details to README.",
+      due_date: "2026-10-22",
+      priority: "low",
+      assignedId: "priya",
+      completed: false,
+    },
+    {
+      title: "Design new landing page",
+      description: "High-fidelity mockup for product launch.",
+      due_date: "2026-10-16",
+      priority: "high",
+      assignedId: "rohan",
+      completed: false,
+    },
+    {
+      title: "Conduct user interviews",
+      description: "Schedule 5 user interviews for beta feedback.",
+      due_date: "2026-10-19",
+      priority: "medium",
+      assignedId: "rohan",
+      completed: false,
+    },
+    {
+      title: "Optimise database queries",
+      description: "Improve query performance for task list.",
+      due_date: "2026-10-13",
+      priority: "high",
+      assignedId: "rohan",
+      completed: true,
+    },
+    {
+      title: "Set up CI/CD pipeline",
+      description: "Configure GitHub Actions for testing and deployment.",
+      due_date: "2026-10-21",
+      priority: "medium",
+      assignedId: "rohan",
+      completed: false,
+    },
+    {
+      title: "Review pull requests",
+      description: "Review and merge pending PRs.",
+      due_date: "2026-10-10",
+      priority: "low",
+      assignedId: "rohan",
+      completed: true,
+    },
+    {
+      title: "Plan sprint retrospective",
+      description: "Organise the sprint retrospective meeting.",
+      due_date: "2026-10-23",
+      priority: "low",
+      assignedId: "rohan",
+      completed: false,
+    },
+  ]);
+};

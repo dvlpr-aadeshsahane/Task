@@ -1,0 +1,70 @@
+{
+  "name": "express-postgre-backend-scaleton",
+  "version": "1.0.0",
+  "description": "this is the scaleton to start building backend using express and postgre",
+  "main": "/src/server.js",
+  "scripts": {
+    "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest",
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js --env development",
+    "start:uat": "node src/server.js --env uat",
+    "start:production": "node src/server.js --env production",
+    "migrate": "knex migrate:latest",
+    "migrate:development": "knex migrate:latest --env development",
+    "migrate:uat": "knex migrate:latest --env uat",
+    "migrate:prod": "knex migrate:latest --env production",
+    "migrate:rollback": "knex migrate:rollback",
+    "migrate:make": "knex migrate:make",
+    "seed": "knex seed:run",
+    "seed:dev": "knex seed:run --env development",
+    "seed:uat": "knex seed:run --env uat",
+    "seed:prod": "knex seed:run --env production",
+    "seed:make": "knex seed:make",
+    "seed:only": "knex seed:run --specific"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=20.9.0"
+  },
+  "dependencies": {
+    "@aws-sdk/client-cloudfront": "^3.1109.0",
+    "@aws-sdk/client-s3": "^3.1110.0",
+    "@aws-sdk/client-ses": "^3.1111.0",
+    "@aws-sdk/s3-request-presigner": "^3.1110.0",
+    "axios": "^1.19.0",
+    "bcrypt": "^6.0.0",
+    "bcryptjs": "^3.0.3",
+    "compression": "^1.8.1",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.6.2",
+    "helmet": "^8.2.0",
+    "jsonwebtoken": "^9.0.3",
+    "morgan": "^1.11.0",
+    "pg": "^8.21.0",
+    "winston": "^3.19.0",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@eslint/json": "^2.0.0",
+    "cross-env": "^10.1.0",
+    "eslint": "^10.4.1",
+    "globals": "^17.6.0",
+    "jest": "^30.4.2",
+    "knex": "^3.2.10",
+    "nodemon": "^3.1.14",
+    "prettier": "^3.8.3",
+    "supertest": "^7.2.2"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "setupFiles": [
+      "<rootDir>/tests/setup-env.js"
+    ]
+  }
+}
